@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Counter 
+
+*Project made to learn react, redux, react-redux and redux-thunk.*
+
+
 
 ## Available Scripts
 
