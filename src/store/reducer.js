@@ -4,20 +4,21 @@ const RESET = 'RESET'
 
 
 const initialState = {
-    count: 0
+    count: 76
 }
 
 function reducer(state = initialState, action) {
+    console.log(action.type)
     switch(action.type) {
-        case INCREMENT:
+        case 'INCREMENT':
         return {
             count: state.count + 1
         }
-        case DECREMENT:
+        case 'DECREMENT':
         return {
             count: state.count - 1
         }
-        case RESET:
+        case 'RESET':
         return {
             count: 0
         }

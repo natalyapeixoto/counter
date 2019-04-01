@@ -7,7 +7,7 @@ import Display from './components/display/display'
 import Button from './components/button/button'
 import Container from './components/container/container'
 
-import * as actionCreators from '../src/store/actions'
+import * as actionCreator from '../src/store/actions'
 
 class App extends Component {
     increment = () => {
@@ -39,9 +39,10 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-   increment: () => dispatch({type:"INCREMENT"}),
-   decrement: () => dispatch({type:"DECREMENT"}),
-   reset: () => dispatch({type:"RESET"})
+   increment: () => {dispatch(actionCreator.increment)}
+     ,
+   decrement: () => dispatch(actionCreator.decrement),
+   reset: () => dispatch(actionCreator.reset)
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps )(App);

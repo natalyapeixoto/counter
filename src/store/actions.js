@@ -1,13 +1,26 @@
 
-export const increment = () =>{
+export const incrementAsync = () =>{
     return {
-        type:"INCREMENT"
+        type:'INCREMENT'
     }
 } 
 
+export const increment = () => {
+    return dispatch => {
+        setTimeout(()=>{
+            dispatch(incrementAsync())
+        },2000)
+    }
+}
 
 export const decrement = () =>{
     return {
-        type:"DECREMENT"
+        type:'DECREMENT'
+    }
+} 
+
+export const reset = () =>{
+    return {
+        type:'RESET'
     }
 } 
