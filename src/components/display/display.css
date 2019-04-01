@@ -1,0 +1,11 @@
+
+.display{
+    display: flex;
+    justify-content: center;
+}
+
+.display__content{
+    background-color: lightseagreen;
+    padding: 4rem 6rem;
+    border-radius: 8px;
+}
