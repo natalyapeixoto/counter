@@ -9,40 +9,29 @@ import Container from './components/container/container'
 
 import * as actionCreator from '../src/store/actions'
 
-class App extends Component {
-    increment = () => {
-      this.props.increment()
-    }
-    decrement = () => {
-      this.props.decrement()
-    }
-    reset = () => {
-      this.props.reset()
-    }
-  
-  render() {
-    return (
-     <div>
-       <Display>{this.props.count}</Display>
-       <Container>
-        <Button onClick={this.increment}>Add</Button>
-        <Button onClick={this.decrement}>Remove</Button>
-        <Button onClick={this.reset}>Reset</Button>
-       </Container>
-     </div>
-    );
-  }
-}
+const App = ({...props}) => (
+  <div>
+    <Display>{props.count}</Display>
+    <Container>
+    <Button onClick={props.increment}>Add</Button>
+    <Button onClick={props.decrement}>Remove</Button>
+    <Button onClick={props.reset}>Reset</Button>
+    </Container>
+  </div>
+)
 
 const mapStateToProps = (state) => ({
   count: state.count
 })
 
-const mapDispatchToProps = (dispatch) => ({
-   increment: () => {dispatch(actionCreator.increment)}
-     ,
-   decrement: () => dispatch(actionCreator.decrement),
-   reset: () => dispatch(actionCreator.reset)
-})
+
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+   increment: () => dispatch(actionCreator.increment()),
+   decrement: () => dispatch(actionCreator.decrement()),
+   reset: () => dispatch(actionCreator.reset())
+  }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps )(App);

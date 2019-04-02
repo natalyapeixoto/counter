@@ -1,17 +1,14 @@
-
 export const incrementAsync = () =>{
     return {
         type:'INCREMENT'
     }
 } 
 
-export const increment = () => {
-    return dispatch => {
+export const increment = () => dispatch => {
         setTimeout(()=>{
             dispatch(incrementAsync())
         },2000)
     }
-}
 
 export const decrement = () =>{
     return {
