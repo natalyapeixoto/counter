@@ -13,9 +13,9 @@ const App = ({...props}) => (
   <div>
     <Display>{props.count}</Display>
     <Container>
-    <Button onClick={props.increment}>Add</Button>
-    <Button onClick={props.decrement}>Remove</Button>
-    <Button onClick={props.reset}>Reset</Button>
+      <Button onClick={props.increment}>Add</Button>
+      <Button onClick={props.decrement}>Remove</Button>
+      <Button onClick={props.reset}>Reset</Button>
     </Container>
   </div>
 )
